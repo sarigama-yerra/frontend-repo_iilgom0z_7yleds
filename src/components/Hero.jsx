@@ -17,17 +17,20 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,85,247,0.18),transparent_60%)]" />
       </div>
 
-      {/* Spline shifted to the right so it doesn't overlap the text; darkened console colors */}
+      {/* Spline shifted to the right so it doesn't overlap the text; force transparent bg and darker blend */}
       <div className="absolute inset-0 flex justify-end items-center pointer-events-none">
-        <div className="w-[120%] md:w-[90%] lg:w-[70%] translate-x-10 md:translate-x-6 lg:translate-x-8 mix-blend-screen opacity-80">
-          <Spline scene="https://prod.spline.design/jQwvQSncGp8maF9S/scene.splinecode" style={{ width: '100%', height: '100vh', filter: 'saturate(0.8) brightness(0.85)' }} />
+        <div className="w-[120%] md:w-[92%] lg:w-[68%] translate-x-10 md:translate-x-6 lg:translate-x-10 mix-blend-multiply opacity-80" style={{ background: 'transparent' }}>
+          <Spline
+            scene="https://prod.spline.design/jQwvQSncGp8maF9S/scene.splinecode"
+            style={{ width: '100%', height: '100vh', background: 'transparent', filter: 'saturate(0.8) brightness(0.8) contrast(1.05)' }}
+          />
         </div>
       </div>
 
-      {/* Foreground gradient veil */}
+      {/* Foreground gradient veil to unify tones */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-24">
+      <div className="relative z-10 mx-auto max-w-[92rem] px-6 sm:px-8 lg:px-10 pt-32 pb-24">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
