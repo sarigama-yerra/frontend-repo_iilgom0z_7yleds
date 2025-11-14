@@ -2,20 +2,20 @@ import { motion } from 'framer-motion'
 import { Sword, BadgeDollarSign, Tv, Headphones, Users, Sparkles } from 'lucide-react'
 
 const items = [
-  { icon: Sword, title: 'Esports Strategy', desc: 'League-ready playbooks, tournament integrations, team partnerships.' },
-  { icon: Tv, title: 'Creator & Streamer', desc: 'Twitch, YouTube, TikTok—co-created narratives with top talent.' },
-  { icon: BadgeDollarSign, title: 'Media & Inventory', desc: 'Exclusive gaming placements, custom units, performance craft.' },
-  { icon: Headphones, title: 'Audio & Sonic IP', desc: 'Branded sounds, OSTs, voice packs, in-game audio drops.' },
-  { icon: Users, title: 'Community & Social', desc: 'Discord ops, UGC quests, fan missions, live events.' },
-  { icon: Sparkles, title: 'Experiential & XR', desc: 'Pop-ups, AR filters, virtual worlds, immersive launches.' },
+  { icon: Sword, title: 'Стратегия в киберспорте', desc: 'Лиги, турниры, партнерства с командами и киберспорт-инициативы.' },
+  { icon: Tv, title: 'Креаторы и стримеры', desc: 'Twitch, YouTube, TikTok — интеграции, спецпроекты и сторителлинг.' },
+  { icon: BadgeDollarSign, title: 'Медиа и инвентарь', desc: 'Эксклюзивные размещения в гейминге, кастомные форматы и performance.' },
+  { icon: Headphones, title: 'Аудио и Sonic IP', desc: 'Фирменные звуки, OST, озвучка, in-game аудио и саунд-дизайн.' },
+  { icon: Users, title: 'Комьюнити и социальные сети', desc: 'Discord-операции, UGC-квесты, фан-миссии и лайв-ивенты.' },
+  { icon: Sparkles, title: 'Экспириенсы и XR', desc: 'Pop-up, AR-фильтры, виртуальные миры и иммерсивные релизы.' },
 ]
 
-export default function Capabilities() {
+export default function Services() {
   return (
-    <section id="capabilities" className="relative bg-[#0A0A0B] text-white py-20">
+    <section id="services" className="relative bg-[#0A0A0B] text-white py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-3xl sm:text-4xl font-bold">Capabilities</motion.h2>
-        <p className="mt-3 text-zinc-400 max-w-2xl">From strategy and storytelling to production and media—end-to-end systems designed for gamers.</p>
+        <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-3xl sm:text-4xl font-bold">Услуги</motion.h2>
+        <p className="mt-3 text-zinc-400 max-w-2xl">От стратегии и креатива до продакшена и медиа — полный цикл для брендов в гейминге.</p>
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map(({ icon: Icon, title, desc }) => (

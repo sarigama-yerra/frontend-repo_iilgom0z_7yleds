@@ -5,7 +5,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const navItems = [
     { label: 'Кейсы', href: '#work' },
-    { label: 'Услуги', href: '#capabilities' },
+    { label: 'Услуги', href: '#services' },
     { label: 'Награды', href: '#awards' },
     { label: 'О компании', href: '#about' },
   ]
@@ -31,7 +31,7 @@ export default function Navbar() {
             ))}
             <a
               href="#contact"
-              className="text-sm px-4 py-2 rounded-md bg-gradient-to-r from-emerald-500 to-cyan-400 text-black font-medium hover:opacity-90 transition-opacity"
+              className="text-sm px-4 py-2 rounded-md bg-gradient-to-r from-fuchsia-500 to-violet-400 text-black font-medium hover:opacity-90 transition-opacity"
             >
               Связаться
             </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="inline-block mt-2 text-sm px-4 py-2 rounded-md bg-gradient-to-r from-emerald-500 to-cyan-400 text-black font-medium"
+              className="inline-block mt-2 text-sm px-4 py-2 rounded-md bg-gradient-to-r from-fuchsia-500 to-violet-400 text-black font-medium"
             >
               Связаться
             </a>
