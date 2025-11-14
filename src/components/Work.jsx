@@ -1,15 +1,57 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { RefreshCw, PackageOpen } from 'lucide-react'
 
-// Placeholder cases – will be replaced by Goose site content if provided
+// Goose.gg-inspired cases (can be replaced with exact content later)
 const allCases = [
-  { id: 1, title: 'Valorant Launch Ops', brand: 'Riot Games', result: '+42% lift in recall', img: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1600&auto=format&fit=crop', summary: 'Tactical creator squads, shroud co-streams, and custom Twitch units.' },
-  { id: 2, title: 'Game Pass Bounty', brand: 'Xbox', result: '1.2M trials', img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop', summary: 'UGC questline, lootable codes, and Discord economy.' },
-  { id: 3, title: 'Legends Collab', brand: 'Apex Legends', result: 'Top trending asset', img: 'https://images.unsplash.com/photo-1526657782770-5491f6c0d128?q=80&w=1600&auto=format&fit=crop', summary: 'Streetwear drop + event takeover with streamers.' },
-  { id: 4, title: 'Indie Showcase', brand: 'Steam', result: '3.1M viewers', img: 'https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1600&auto=format&fit=crop', summary: 'Twitch front-page programming and mini-games.' },
-  { id: 5, title: 'Arcane Night', brand: 'Netflix', result: '500K streams', img: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1600&auto=format&fit=crop', summary: 'Watch party mechanics and talent-driven activations.' },
-  { id: 6, title: 'Creator Cup', brand: 'YouTube', result: 'Top 3 ad unit', img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop', summary: 'Mid-roll storyline and live overlays.' },
+  {
+    id: 1,
+    title: 'Home Credit Bank. 5% — это много',
+    brand: 'Home Credit Bank',
+    result: '5% кешбэк на любые игровые покупки',
+    img: 'https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?q=80&w=1600&auto=format&fit=crop',
+    summary: 'Промо на Twitch: интеграции со стримерами и инфлюенсерами, механики вовлечения.'
+  },
+  {
+    id: 2,
+    title: 'Winline EML',
+    brand: 'Winline',
+    result: 'Медиалига по CS:GO',
+    img: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop',
+    summary: 'Про и полупро-игроки, артисты и блогеры. Турнирный продакшн и инфлюенс-активации.'
+  },
+  {
+    id: 3,
+    title: 'Avito CUP',
+    brand: 'Авито',
+    result: 'Турнир LoL для новых талантов',
+    img: 'https://images.unsplash.com/photo-1526657782770-5491f6c0d128?q=80&w=1600&auto=format&fit=crop',
+    summary: 'Организация турнира и коммуникация с сообществом. Возможность войти в проф-лигу.'
+  },
+  {
+    id: 4,
+    title: 'KFC Games',
+    brand: 'KFC',
+    result: 'Виджет + любительский турнир по Dota 2',
+    img: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1600&auto=format&fit=crop',
+    summary: 'Промокампания на Twitch с разработкой кастомного виджета и турнира.'
+  },
+  {
+    id: 5,
+    title: 'AXE Collision Games',
+    brand: 'Unilever / AXE',
+    result: 'Первый брендированный PVP-виджет в СНГ',
+    img: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop',
+    summary: 'Геймифицированная механика на Twitch, интеграции с инфлюенсерами.'
+  },
+  {
+    id: 6,
+    title: 'King of the Hill. Lenovo Legion',
+    brand: 'Lenovo',
+    result: 'Программа лояльности и скидки за киллы',
+    img: 'https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1600&auto=format&fit=crop',
+    summary: 'Начисление бонусов за игровые действия и их конвертация в скидки.'
+  },
 ]
 
 function randomThree(source) {
@@ -30,16 +72,16 @@ export default function Work() {
     <section id="work" className="relative bg-[#0A0A0B] text-white py-20">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.08] bg-[url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 60 60\'><path d=\'M0 30h60M30 0v60\' stroke=\'rgba(255,255,255,0.14)\' stroke-width=\'0.5\' /><circle cx=\'30\' cy=\'30\' r=\'8\' fill=\'none\' stroke=\'rgba(255,255,255,0.12)\' stroke-width=\'0.5\'/></svg>')]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(16,185,129,0.08),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(16,185,129,0.10),transparent_60%)]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-4xl sm:text-5xl font-bold">Cases — Loot the Crates</motion.h2>
-        <p className="mt-3 text-zinc-400 max-w-2xl">Choose a loot box to reveal a client case. Hit refresh to randomize new crates.</p>
+        <motion.h2 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-4xl sm:text-5xl font-bold">Кейсы — Loot the Crates</motion.h2>
+        <p className="mt-3 text-zinc-400 max-w-2xl">Выберите лутбокс, чтобы раскрыть кейс клиента. Нажмите обновить, чтобы перегенерировать.</p>
 
         <div className="mt-8 flex items-center gap-3">
           <button onClick={reset} className="inline-flex items-center gap-2 text-sm px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 border border-white/10">
-            <RefreshCw size={16} /> Refresh crates
+            <RefreshCw size={16} /> Обновить лутбоксы
           </button>
         </div>
 
@@ -57,10 +99,10 @@ export default function Work() {
                     className="group w-full aspect-[4/5] rounded-xl border border-emerald-400/20 bg-gradient-to-b from-emerald-400/10 to-cyan-400/10 p-6 grid place-items-center overflow-hidden"
                   >
                     <div className="relative">
-                      <div className="absolute -inset-10 bg-[conic-gradient(from_0deg,transparent,rgba(16,185,129,0.2),transparent)] blur-xl opacity-50 group-hover:opacity-80 transition" />
+                      <div className="absolute -inset-10 bg-[conic-gradient(from_0deg,transparent,rgba(16,185,129,0.25),transparent)] blur-xl opacity-50 group-hover:opacity-80 transition" />
                       <PackageOpen className="relative z-10 text-emerald-300" size={48} />
                     </div>
-                    <div className="absolute bottom-4 left-0 right-0 text-center text-emerald-200/80 text-sm tracking-wide">Click to open</div>
+                    <div className="absolute bottom-4 left-0 right-0 text-center text-emerald-200/80 text-sm tracking-wide">Нажмите, чтобы открыть</div>
                   </motion.button>
                 ) : (
                   <motion.div

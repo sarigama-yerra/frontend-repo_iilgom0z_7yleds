@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative min-h-[92vh] overflow-hidden bg-black text-white">
       {/* Dark patterned background behind console */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.10),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.12),transparent_60%)]" />
         <div className="absolute inset-0 opacity-[0.18] bg-[url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'160\' viewBox=\'0 0 40 40\'><g fill=\'none\' stroke=\'rgba(255,255,255,0.10)\' stroke-width=\'0.5\'><path d=\'M0 20h40M20 0v40\'/><circle cx=\'20\' cy=\'20\' r=\'12\'/></g></svg>')]" />
       </div>
 
@@ -25,7 +25,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-emerald-400/90 text-sm font-medium tracking-wider uppercase"
+          className="text-sm font-medium tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400"
         >
           Goose Gaming
         </motion.p>
@@ -33,9 +33,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
-          className="text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight max-w-3xl"
+          className="text-5xl sm:text-7xl lg:text-8xl font-extrabold leading-[1.05] tracking-tight max-w-4xl"
         >
-          We help brands speak gamer.
+          Добро пожаловать в Goose Gaming — проводник в мир гейминга для брендов
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -43,22 +43,30 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.15 }}
           className="mt-6 max-w-2xl text-lg sm:text-xl text-zinc-300"
         >
-          Full‑stack marketing for gaming and esports audiences. Serious craft with playful soul—quests, loot, levels, boss fights.
+          Рекламное агентство полного цикла в области гейминга и киберспорта. Мы объединяем бренды с видеоиграми, лигами и командами, стримерами и игровыми инфлюенсерами.
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.22 }}
+          className="mt-3 max-w-2xl text-base sm:text-lg text-zinc-400"
+        >
+          Наша цель — чтобы все бренды соприкоснулись с геймингом.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.25 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <a href="#contact" className="px-5 py-3 rounded-md bg-white text-black font-medium hover:bg-zinc-200 transition-colors">Start a quest</a>
-          <a href="#work" className="px-5 py-3 rounded-md bg-white/10 border border-white/10 hover:bg-white/20 transition-colors">View success stories</a>
+          <a href="#contact" className="px-5 py-3 rounded-md bg-gradient-to-r from-emerald-500 to-cyan-400 text-black font-medium hover:opacity-90 transition-opacity">Начать квест</a>
+          <a href="#work" className="px-5 py-3 rounded-md bg-white/10 border border-white/10 hover:bg-white/20 transition-colors">Смотреть кейсы</a>
         </motion.div>
 
         <div className="mt-12 flex gap-6 text-sm text-zinc-400">
-          <div>100+ brands</div>
-          <div>60+ industry awards</div>
-          <div>Global esports expertise</div>
+          <div>100+ брендов</div>
+          <div>60+ наград</div>
+          <div>Экспертиза в киберспорте</div>
         </div>
       </div>
 
