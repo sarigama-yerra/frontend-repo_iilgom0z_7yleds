@@ -15,8 +15,8 @@ function App() {
       <Awards />
       <section id="about" className="bg-[#0A0A0B] py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold">About</h2>
-          <p className="mt-4 text-zinc-400 max-w-3xl">We are a specialist team helping world‑class brands communicate with gamers. Strategy, creative, production, media, and measurement—built by veterans across esports, publishing, and AAA studios. We operate like a raid party: tight coordination, rare loot, and clean executions.</p>
+          <h2 className="text-4xl sm:text-5xl font-bold">About</h2>
+          <p className="mt-4 text-zinc-400 max-w-3xl">Мы помогаем брендам говорить на языке игроков. Команда со стажем в киберспорте, паблишинге и AAA‑продакшне. Стратегия, креатив, медиа, продакшн и измерение эффективности — полный цикл под задачи бизнеса.</p>
         </div>
       </section>
       <Footer />

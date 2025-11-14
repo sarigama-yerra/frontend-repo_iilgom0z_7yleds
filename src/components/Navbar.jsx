@@ -15,10 +15,10 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <a href="#" className="flex items-center gap-2 text-white">
-            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-fuchsia-500 to-indigo-500 grid place-items-center">
+            <div className="h-8 w-8 rounded-md bg-gradient-to-br from-emerald-500 to-cyan-500 grid place-items-center">
               <Gamepad2 size={18} className="text-white" />
             </div>
-            <span className="font-semibold tracking-tight">Dragonloop</span>
+            <span className="font-semibold tracking-tight">Goose Gaming</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
