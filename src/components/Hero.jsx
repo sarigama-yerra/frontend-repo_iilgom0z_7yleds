@@ -14,15 +14,15 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="relative min-h-[96vh] overflow-hidden bg-black text-white">
-      {/* High-detail hero art backdrop (replace with your preferred game-like landscape) */}
+      {/* High-detail hero art backdrop (replaced with provided final art) */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1520975922284-9e0ce8273e9e?q=80&w=2400&auto=format&fit=crop"
-          alt="Фентези‑пейзаж"
+          src="https://wallpaperbat.com/img/53723586-hd-wallpaper-dauntless-videogame.jpg"
+          alt="Фентези‑пейзаж — финальное арт‑изображение"
           className="absolute inset-0 w-full h-full object-cover"
         />
         {/* Dark veil for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/50 to-black/70" />
       </div>
 
       {/* Optional sky glow + star particles for gaming vibe */}
