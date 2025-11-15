@@ -69,7 +69,7 @@ export default function Hero() {
       </div>
 
       {/* Torn paper divider: uneven full-width edge with shadow so hero tucks under next section */}
-      <div className="relative z-20">
+      <div className="relative z-20 -mb-px">
         <TornPaperDivider color="#0A0A0B" />
       </div>
     </section>

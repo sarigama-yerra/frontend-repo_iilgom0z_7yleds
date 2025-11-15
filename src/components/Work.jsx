@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { RefreshCw, PackageOpen } from 'lucide-react'
 
 // Goose.gg-inspired cases with real image assets
@@ -69,7 +69,7 @@ export default function Work() {
   }
 
   return (
-    <section id="work" className="relative bg-[#0A0A0B] text-white py-20">
+    <section id="work" className="relative bg-[#0A0A0B] text-white pt-20 pb-20">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.08] bg-[url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 60 60\'><path d=\'M0 30h60M30 0v60\' stroke=\'rgba(255,255,255,0.14)\' stroke-width=\'0.5\' /><circle cx=\'30\' cy=\'30\' r=\'8\' fill=\'none\' stroke=\'rgba(255,255,255,0.12)\' stroke-width=\'0.5\'/></svg>')]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(168,85,247,0.14),transparent_60%)]" />
@@ -88,43 +88,45 @@ export default function Work() {
         <div className="mt-8 grid sm:grid-cols-3 gap-6">
           {selection.map((item, idx) => (
             <div key={item.id} className="relative">
-              <AnimatePresence initial={false}>
-                {!revealed[idx] ? (
-                  <motion.button
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.95, opacity: 0 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-                    onClick={() => setRevealed(r => r.map((v, i) => i === idx ? true : v))}
-                    className="group w-full aspect-[4/5] rounded-xl border border-fuchsia-400/20 bg-gradient-to-b from-fuchsia-400/10 to-violet-400/10 p-6 grid place-items-center overflow-hidden"
+              {/* Flip container fixes jumping by preserving layout with a fixed aspect and 3D flip */}
+              <div className="w-full aspect-[4/5] [perspective:1100px]">
+                <motion.div
+                  initial={false}
+                  animate={{ rotateY: revealed[idx] ? 180 : 0 }}
+                  transition={{ duration: 0.5, ease: [0.2, 0.8, 0.2, 1] }}
+                  className="relative w-full h-full rounded-xl"
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
+                  {/* Front (crate) */}
+                  <button
+                    onClick={() => setRevealed(r => r.map((v, i) => (i === idx ? true : v)))}
+                    className="absolute inset-0 group rounded-xl border border-fuchsia-400/20 bg-gradient-to-b from-fuchsia-400/10 to-violet-400/10 p-6 grid place-items-center overflow-hidden"
+                    style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(0deg)' }}
                   >
                     <div className="relative">
                       <div className="absolute -inset-10 bg-[conic-gradient(from_0deg,transparent,rgba(168,85,247,0.25),transparent)] blur-xl opacity-50 group-hover:opacity-80 transition" />
                       <PackageOpen className="relative z-10 text-fuchsia-300" size={48} />
                     </div>
                     <div className="absolute bottom-4 left-0 right-0 text-center text-fuchsia-200/80 text-sm tracking-wide">Нажмите, чтобы открыть</div>
-                  </motion.button>
-                ) : (
-                  <motion.div
-                    key={`card-${item.id}`}
-                    initial={{ rotateY: 90, opacity: 0 }}
-                    animate={{ rotateY: 0, opacity: 1 }}
-                    exit={{ rotateY: -90, opacity: 0 }}
-                    transition={{ duration: 0.45 }}
-                    className="overflow-hidden rounded-xl border border-white/10 bg-white/5 h-full"
+                  </button>
+
+                  {/* Back (case card) */}
+                  <div
+                    className="absolute inset-0 overflow-hidden rounded-xl border border-white/10 bg-white/5"
+                    style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                   >
-                    <div className="aspect-[4/3] overflow-hidden">
+                    <div className="h-1/2 w-full overflow-hidden">
                       <img src={item.img} alt={item.title} className="h-full w-full object-cover" />
                     </div>
-                    <div className="p-5">
+                    <div className="p-5 h-1/2">
                       <div className="text-sm text-zinc-400">{item.brand}</div>
-                      <h3 className="mt-1 text-xl font-semibold">{item.title}</h3>
+                      <h3 className="mt-1 text-lg font-semibold leading-tight line-clamp-2">{item.title}</h3>
                       <div className="mt-2 text-sm text-fuchsia-400">{item.result}</div>
-                      <p className="mt-3 text-sm text-zinc-300">{item.summary}</p>
+                      <p className="mt-2 text-xs text-zinc-300 line-clamp-3">{item.summary}</p>
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           ))}
         </div>
